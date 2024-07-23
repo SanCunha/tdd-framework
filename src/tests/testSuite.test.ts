@@ -1,5 +1,5 @@
-import { TestSuite } from './testSuite';
-import { assertEquals } from './assertions';
+import { TestSuite } from '../controllers/testSuite';
+import { assertEquals } from '../controllers/assertions';
 
 test('TestSuite runs added test cases', () => {
     const suite = new TestSuite();

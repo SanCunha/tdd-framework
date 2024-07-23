@@ -1,4 +1,4 @@
-import { assertEquals } from './assertions';
+import { assertEquals } from '../controllers/assertions';
 
 test('assertEquals passes for equal values', () => {
     expect(() => assertEquals(1, 1)).not.toThrow();
