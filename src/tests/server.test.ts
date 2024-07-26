@@ -12,7 +12,6 @@ afterAll((done) => {
 describe('TDD Framework API', () => {
     it('should create a new test suite', async () => {
         const testSuite = await createTestSuite({ name: 'Sample Suite' });
-        
         expect(testSuite.name).toBe('Sample Suite');
     });
 

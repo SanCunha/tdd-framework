@@ -8,3 +8,4 @@ export interface TestSuite {
 }
 
 export const testSuites: TestSuite[] = [];
+
