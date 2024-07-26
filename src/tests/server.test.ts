@@ -1,3 +1,4 @@
+import request from 'supertest';
 import { app, server } from '../server';
 import { createTestSuite, createTestCase, runTestSuite, getTestSuiteResults } from './helpers/testHelpers';
 
