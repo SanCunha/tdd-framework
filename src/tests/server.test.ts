@@ -27,8 +27,7 @@ describe('TDD Framework API', () => {
         await createTestCase(testSuite.id, { name: 'Sample Test', testCase: 'return 1 + 1 === 2' });
         
         const runResults = await runTestSuite(testSuite.id);
-
-        expect(runResults.results[0].status).toBe('passed');
+        expect(runResults).toBe('1 run, 0 failed');
     });
 
     it('should get test suite results', async () => {
@@ -39,6 +38,6 @@ describe('TDD Framework API', () => {
         
         const results = await getTestSuiteResults(testSuite.id);
 
-        expect(results.results[0].status).toBe('passed');
+        expect(results).toBe('1 run, 0 failed');
     });
 });

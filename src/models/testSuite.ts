@@ -1,11 +1,20 @@
-import { TestCase } from "../types/testCase";
+import { TestCase } from './testCase';
+import { TestResult } from './testResult';
 
-export interface TestSuite {
-    id: string;
+export class TestSuite {
     name: string;
-    testCases: { id: string; name: string; testCase: TestCase }[];
-    results: { testCase: string; status: 'passed' | 'failed'; error?: string }[];
+    tests: TestCase[];
+
+    constructor(name: string) {
+        this.name = name;
+        this.tests = [];
+    }
+
+    add(test: TestCase) {
+        this.tests.push(test);
+    }
+
+    run(result: TestResult) {
+        this.tests.forEach(test => test.run(result));
+    }
 }
-
-export const testSuites: TestSuite[] = [];
-
