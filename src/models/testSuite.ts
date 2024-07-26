@@ -1,4 +1,4 @@
-export type TestCase = () => void;
+import { TestCase } from "../types/testCase";
 
 export interface TestSuite {
     id: string;

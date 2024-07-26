@@ -1,7 +1,8 @@
 import { Request, Response } from 'express';
 import { v4 as uuidv4 } from 'uuid';
-import { TestSuite, TestCase } from '../models/testSuite';
+import { TestSuite} from '../models/testSuite';
 import { TestSuiteService } from '../services/testSuiteService';
+import { TestCase } from '../types/testCase';
 
 const testSuiteService = new TestSuiteService();
 

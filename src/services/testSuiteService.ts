@@ -1,5 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
-import { TestSuite, testSuites, TestCase } from '../models/testSuite';
+import { TestSuite, testSuites } from '../models/testSuite';
+import { TestCase } from '../types/testCase';
 
 export class TestSuiteService {
     addTestSuite(newSuite: TestSuite) {
