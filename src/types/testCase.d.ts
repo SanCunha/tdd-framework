@@ -1,1 +1,1 @@
-export type TestCase = () => void;
+export type TestCaseType = () => bool;

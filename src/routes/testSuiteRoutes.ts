@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { TestCase } from '../models/testCase';
 import { TestSuite } from '../models/testSuite';
 import { TestResult } from '../models/testResult';
+import { TestCaseType } from '../types/testCase';
 
 const router = express.Router();
 
@@ -28,7 +29,7 @@ router.post('/test-suites/:suiteId/test-cases', (req, res) => {
         return res.status(404).json({ message: 'Test suite not found' });
     }
     try {
-        const testMethod = new Function(testCase) as () => void;
+        const testMethod = new Function(testCase) as TestCaseType;
         const newTestCase = new TestCase(name, testMethod);
         suite.add(newTestCase);
         const testCaseId = uuidv4();

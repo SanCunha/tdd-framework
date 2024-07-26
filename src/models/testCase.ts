@@ -1,12 +1,13 @@
+import { TestCaseType } from "../types/testCase";
 import { TestResult } from "./testResult";
 
 export class TestCase {
     name: string;
-    testMethod: () => void;
+    testCase: TestCaseType;
 
-    constructor(name: string, testMethod: () => void) {
+    constructor(name: string, testCase: TestCaseType) {
         this.name = name;
-        this.testMethod = testMethod;
+        this.testCase = testCase;
     }
 
     setUp(): void {
@@ -21,7 +22,7 @@ export class TestCase {
         result.testStarted();
         this.setUp();
         try {
-            this.testMethod();
+            if(!this.testCase()) result.testFailed();
         } catch (error) {
             result.testFailed();
         }

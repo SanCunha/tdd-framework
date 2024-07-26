@@ -1,1 +1,0 @@
-export type TestCase = () => void;
