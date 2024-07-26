@@ -1,4 +1,4 @@
-export type TestCase = () => void;
+import { TestCase } from "../types/testSuite";
 
 export interface TestSuite {
     id: string;
@@ -8,3 +8,4 @@ export interface TestSuite {
 }
 
 export const testSuites: TestSuite[] = [];
+

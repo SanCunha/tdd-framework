@@ -1,5 +1,4 @@
-import request from 'supertest';
-import { app, server } from '../server';
+import { server } from '../server';
 import { createTestSuite, createTestCase, runTestSuite, getTestSuiteResults } from './helpers/testHelpers';
 
 beforeAll((done) => {
@@ -13,7 +12,6 @@ afterAll((done) => {
 describe('TDD Framework API', () => {
     it('should create a new test suite', async () => {
         const testSuite = await createTestSuite({ name: 'Sample Suite' });
-        
         expect(testSuite.name).toBe('Sample Suite');
     });
 
